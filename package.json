@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  },
+  "name": "tetris",
+  "version": "1.0.0",
+  "main": "index.html",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html",
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": ""
+}
