@@ -461,7 +461,6 @@ function arenaSweep() {
     }
     const row = arena.splice(y, 1)[0].fill(0);
     arena.unshift(row);
-    ++y;
   }
 }
 
@@ -702,4 +701,4 @@ update();
 
 },{}]},["5P3y9","7FKPT"], "7FKPT", "parcelRequire289b")
 
-//# sourceMappingURL=index.e5e7c040.js.map
+//# sourceMappingURL=index.HASH_REF_cc9d90f0db2bae0f782a827be5e7c040.js.map

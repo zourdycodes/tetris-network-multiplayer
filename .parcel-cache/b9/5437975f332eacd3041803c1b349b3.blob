@@ -7,7 +7,6 @@ context.scale(20, 20);
 // x = row
 
 function arenaSweep() {
-  // trixks with outer
   outer: for (let y = arena.length - 1; y < 0; --y) {
     for (let x = 0; x < arena[y].length; ++x) {
       // if not populated
@@ -15,9 +14,6 @@ function arenaSweep() {
         continue outer;
       }
     }
-    const row = arena.splice(y, 1)[0].fill(0);
-    arena.unshift(row);
-    ++y;
   }
 }
 
