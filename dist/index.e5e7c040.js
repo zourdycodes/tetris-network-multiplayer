@@ -451,8 +451,9 @@ context.scale(20, 20);
 // x = row
 
 function arenaSweep() {
+  let rowCount = 1;
   // trixks with outer
-  outer: for (let y = arena.length - 1; y < 0; --y) {
+  outer: for (let y = arena.length - 1; y > 0; --y) {
     for (let x = 0; x < arena[y].length; ++x) {
       // if not populated
       if (arena[y][x] === 0) {
@@ -462,6 +463,9 @@ function arenaSweep() {
     const row = arena.splice(y, 1)[0].fill(0);
     arena.unshift(row);
     ++y;
+
+    player.score += rowCount * 10;
+    rowCount *= 2;
   }
 }
 
@@ -580,6 +584,9 @@ function playerDrop() {
     player.pos.y--;
     merge(arena, player);
     playerReset();
+    // debugger;
+    arenaSweep();
+    updateScore();
   }
   dropCounter = 0;
 }
@@ -601,6 +608,8 @@ function playerReset() {
   // DETECT GAME OVER
   if (collide(arena, player)) {
     arena.forEach((row) => row.fill(0));
+    player.score = 0;
+    updateScore();
   }
 }
 
@@ -657,6 +666,10 @@ function update(time = 0) {
   requestAnimationFrame(update);
 }
 
+function updateScore() {
+  document.getElementById("score").innerHTML = player.score;
+}
+
 const colors = [
   null,
   "#ff0d72",
@@ -671,8 +684,9 @@ const colors = [
 const arena = createMatrix(12, 20);
 
 const player = {
-  pos: { x: 5, y: 5 },
-  matrix: createPiece("T"),
+  pos: { x: 0, y: 0 },
+  matrix: null,
+  score: 0,
 };
 
 // controller
@@ -698,6 +712,8 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+playerReset();
+updateScore();
 update();
 
 },{}]},["5P3y9","7FKPT"], "7FKPT", "parcelRequire289b")

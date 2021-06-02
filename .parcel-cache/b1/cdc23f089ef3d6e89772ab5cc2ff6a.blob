@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+
+    <style data-parcel-key="cdd1baffece2cf6c5cd3938a844e31ad">
+      .canvas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .heading {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      #score {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">TETRIS BY ZOURDY</h1>
+    <div id="score"></div>
+    <div class="canvas">
+      <canvas id="tetris" width="240" height="400"></canvas>
+    </div>
+
+    <script src="6e0066dba4843f228a1bbf1d9e0a3048"></script>
+  </body>
+</html>

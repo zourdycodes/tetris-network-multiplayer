@@ -1,0 +1,14 @@
+.canvas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .heading {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      #score {
+        text-align: center;
+      }
